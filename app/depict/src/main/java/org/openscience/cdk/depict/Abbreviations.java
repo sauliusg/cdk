@@ -505,6 +505,8 @@ public class Abbreviations implements Iterable<String> {
                         } else if (nbr.getAtomicNumber() > 0){
                             nbrSymbols.add(newSymbol(nbr.getAtomicNumber(), nbr.getImplicitHydrogenCount(), false));
                             xatoms.add(nbr);
+                        } else {
+                            newbonds.add(bond);
                         }
                     } else {
                         newbonds.add(bond);

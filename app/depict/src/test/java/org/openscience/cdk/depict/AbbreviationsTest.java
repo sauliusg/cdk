@@ -272,6 +272,17 @@ public class AbbreviationsTest {
         assertThat(sgroups.get(0).getSubscript(), is("HOOH"));
     }
 
+    @Test public void OMeFragment() throws Exception {
+        Abbreviations factory = new Abbreviations();
+        IAtomContainer mol = smi("*OC");
+        List<Sgroup> sgroups = factory.generate(mol);
+        assertThat(sgroups.size(), is(1));
+        Sgroup sgroup = sgroups.get(0);
+        assertThat(sgroup.getAtoms().size(), is(2));
+        assertThat(sgroup.getBonds().size(), is(1));
+        assertThat(sgroup.getSubscript(), is("OMe"));
+    }
+
     @Test
     public void loadFromFile() throws Exception {
         Abbreviations factory = new Abbreviations();
